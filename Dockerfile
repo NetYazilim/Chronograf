@@ -13,6 +13,10 @@ EXPOSE 8888
 ENV BOLT_PATH /etc/chronograf-v1-.db
 VOLUME /shared
 
+COPY --from=0 /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
+COPY --from=0 /etc/localtime /etc/localtime
+COPY --from=0 /etc/timezone /etc/timezone
+
 COPY --from=0 /tmp/chronograf /bin/chronograf
 
 ENTRYPOINT ["/bin/chronograf"]

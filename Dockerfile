@@ -1,6 +1,6 @@
 FROM netyazilim/alpine-base:3.8
 
-ARG VERSION=1.6.2
+ARG VERSION=1.7.5
 
 WORKDIR /tmp
 RUN wget --quiet https://dl.influxdata.com/chronograf/releases/chronograf-${VERSION}-static_linux_amd64.tar.gz -O chronograf.tar.gz  && \
